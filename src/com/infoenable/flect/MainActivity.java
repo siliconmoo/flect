@@ -73,11 +73,11 @@ public class MainActivity extends Activity  implements TextureView.SurfaceTextur
 
         mGestureDetector = createGestureDetector(this);
         thisContext=this;
-        if (false){
-        mTextureView = new TextureView(this);//(TextureView) findViewById(R.string.texture_view);
-        mTextureView.setSurfaceTextureListener(this);
-        setContentView(mTextureView);
-        }
+        //if (false){
+	    //    mTextureView = new TextureView(this);//(TextureView) findViewById(R.string.texture_view);
+	    //    mTextureView.setSurfaceTextureListener(this);
+	    //    setContentView(mTextureView);
+        //}
         if (true) {
         setContentView(R.layout.activity_main);
         message = (TextView) this.findViewById(R.string.message);
@@ -113,7 +113,7 @@ public class MainActivity extends Activity  implements TextureView.SurfaceTextur
             		}
             	};
             	hu = new HttpFileUpload();
-            	hu.ba = getJpeg(cameraBuffers[this.currentPicture-1]);
+            	hu.ba = getJpeg(cameraBuffers[this.currentPicture]);
             	Log.d("",String.format("bytes %d", hu.ba.length));
             	t.start();
                 return true;
@@ -142,7 +142,6 @@ public class MainActivity extends Activity  implements TextureView.SurfaceTextur
     	if (mCameraPreview != null) {
     		mCameraPreview=null;
     	}
-    	System.gc();
 
     }
     
